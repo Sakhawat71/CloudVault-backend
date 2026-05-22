@@ -57,7 +57,16 @@ export const loginUserService = async (data: {
     return { token };
 };
 
-export const getMeService = async ( user: any ) => {
-    console.log(user);
-    return user;
-} 
+export const getMeService = async (user: any) => {
+
+    const foundUser = await prisma.user.findUnique({
+        where: { id: user.id },
+        select: {
+            id: true,
+            name: true,
+            email: true,
+        },
+    });
+
+    return foundUser;
+};
