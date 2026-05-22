@@ -4,8 +4,6 @@ import { authRoutes } from './modules/auth/auth.route';
 import { fileRoutes } from './modules/file/file.route';
 // import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import cookieParser from 'cookie-parser';
-// import appRouter from './app/routes/router';
-// import notFound from './app/middlewares/notFound';
 const app: Application = express();
 
 app.use(
